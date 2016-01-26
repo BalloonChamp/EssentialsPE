@@ -19,7 +19,7 @@ permissions:
                         descrption: "Prevent the player from being banned"
             essentials.landclaim
                 default: false
-                description: "Allows for land claiming"
+                description: "Allows for land claiming."
                 children:
                     essentials.landclaim.toggle
                         default: false
