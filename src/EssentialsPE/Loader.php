@@ -45,6 +45,8 @@ use EssentialsPE\Commands\Override\Msg;
 use EssentialsPE\Commands\Ping;
 use EssentialsPE\Commands\PowerTool\PowerTool;
 use EssentialsPE\Commands\PowerTool\PowerToolToggle;
+use EssentialsPE\Commands\LandClaim\LandClaim;
+use EssentialsPE\Commands\LandClaim\LandClaimToggle;
 use EssentialsPE\Commands\PTime;
 use EssentialsPE\Commands\PvP;
 use EssentialsPE\Commands\RealName;
@@ -193,6 +195,10 @@ class Loader extends PluginBase{
             //PowerTool
             new PowerTool($this->getAPI()),
             new PowerToolToggle($this->getAPI()),
+            
+            //LandClaim
+            new LandClaim($this->getAPI())
+            new LandClaimToggle($this->getAPI())
 
             //Teleport
             new TPA($this->getAPI()),
