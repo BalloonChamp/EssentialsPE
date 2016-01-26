@@ -10,8 +10,8 @@ class PowerToolToggle extends BaseCommand{
      * @param BaseAPI $api
      */
     public function __construct(BaseAPI $api){
-        parent::__construct($api, "powertooltoggle", "Disable PowerTool from all the items", null, false, ["ptt", "pttoggle"]);
-        $this->setPermission("essentials.powertooltoggle");
+        parent::__construct($api, "claimtoggle", "Disable Land Claim from all the items", null, false, ["ptt", "pttoggle"]);
+        $this->setPermission("essentials.claimtoggle");
     }
     /**
      * @param CommandSender $sender
