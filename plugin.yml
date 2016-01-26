@@ -17,6 +17,13 @@ permissions:
                     essentials.ban.exempt:
                         default: op
                         descrption: "Prevent the player from being banned"
+            essentials.landclaim
+                default: false
+                description: "Allows for land claiming"
+                children:
+                    essentials.landclaim.toggle
+                        default: false
+                        description: "Toggle Land Claim off and on."
             essentials.colorchat:
                 default: op
                 description: "Allow to chat using colors!"
