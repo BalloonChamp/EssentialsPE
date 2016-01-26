@@ -12,7 +12,7 @@ class PowerTool extends BaseCommand{
      */
     public function __construct(BaseAPI $api){
         parent::__construct($api, "claim", "Toogle Land Claim ability on the item you're holding", "<command|c:chat macro> <arguments...>", false, ["pt"]);
-        $this->setPermission("essentials.powertool.use");
+        $this->setPermission("essentials.landclaim.use");
     }
     /**
      * @param CommandSender $sender
@@ -30,7 +30,7 @@ class PowerTool extends BaseCommand{
         }
         $item = $sender->getInventory()->getItemInHand();
         if($item->getID() === Item::AIR){
-            $sender->sendMessage(TextFormat::RED . "You can't assign a command to an empty hand.");
+            $sender->sendMessage(TextFormat::RED . "You can't claim with this block.");
             return false;
         }
         if(count($args) === 0){
@@ -58,7 +58,7 @@ class PowerTool extends BaseCommand{
                 $this->getAPI()->setPowerToolItemChatMacro($sender, $item, $c);
                 $sender->sendMessage(TextFormat::GREEN . "Chat macro successfully assigned to this item!");
             }elseif(stripos($command, "a:") !== false){
-                if(!$sender->hasPermission("essentials.powertool.append")){
+                if(!$sender->hasPermission("essentials.landclaim.append")){
                     $sender->sendMessage(TextFormat::RED . $this->getPermissionMessage());
                     return false;
                 }
@@ -67,7 +67,7 @@ class PowerTool extends BaseCommand{
                 $this->getAPI()->setPowerToolItemCommands($sender, $item, $commands);
                 $sender->sendMessage(TextFormat::GREEN . "Commands successfully assigned to this item!");
             }elseif(stripos($command, "r:") !== false){
-                if(!$sender->hasPermission("essentials.powertool.append")){
+                if(!$sender->hasPermission("essentials.landclaim.append")){
                     $sender->sendMessage(TextFormat::RED . $this->getPermissionMessage());
                     return false;
                 }
